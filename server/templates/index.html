@@ -30,15 +30,27 @@
     </nav>
 
     <main class="container mt-4">
+        <!-- New Default Pack -->
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="new_default_textures" checked disabled>
-            <label class="from-check-label"" for=" new_default_textures">New Default Textures</label>
+            <label class="form-check-label" for=" new_default_textures">New Default Textures</label>
         </div>
+        <!-- Cherry Picking -->
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="vibrant_bed">
-            <label class="from-check-label"" for="vibrant_bed">Vibrant Bed</label>
+            <input class="form-check-input" type="checkbox" id="cherry_picking">
+            <label class="form-check-label" for="cherry_picking">Cherry Picking</label>
         </div>
-        <button class="btn btn-primary btn-download">Download</button>
+        <!-- Beds -->
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="bed" id="3d_bed">
+            <label class="form-check-label" for="3d_bed">New 3D Bed</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="bed" id="vibrant_bed">
+            <label class="form-check-label" for="vibrant_bed">Vibrant Bed</label>
+        </div>
+        <!-- Download button -->
+        <button class="btn btn-primary d-block btn-download">Download</button>
 
     </main>
 

@@ -36,3 +36,7 @@ def download():
             "Content-Disposition": "attachment;filename=Vanilla_Tweaks_for_1.8.9.zip"
         },
     )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
