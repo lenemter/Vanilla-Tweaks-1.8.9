@@ -27,9 +27,8 @@ def download():
     with z.ZipFile(in_memory_file, "w") as z1:
         for fname in zips:
             with z.ZipFile(fname, "r") as zf:
-                namelist_set = set(zf.namelist())
-                for name in namelist_set or name in blacklisted:
-                    if name not in z1.namelist():
+                for name in zf.namelist():
+                    if name not in z1.namelist() and name not in blacklisted:
                         z1.writestr(name, zf.open(name).read())
 
     return Response(
