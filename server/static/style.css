@@ -1,0 +1,17 @@
+/* Center brand */
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+/* Overlaping navbar fix */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 0px;
+  }
+}

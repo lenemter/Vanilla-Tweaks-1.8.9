@@ -19,16 +19,16 @@ def download():
     in_memory_file = BytesIO()
     zips = [f"patches/{patch}.zip" for patch in args] + ["new_default_textures.zip"]
 
-    blacklisted = set()
+    blacklist = set()
     if "vibrant_bed_icon" in args:
-        blacklisted.add("assets/minecraft/textures/blocks/bed_head.png")
-        blacklisted.add("assets/minecraft/textures/blocks/bed_feet.png")
+        blacklist.add("assets/minecraft/textures/blocks/bed_head.png")
+        blacklist.add("assets/minecraft/textures/blocks/bed_feet.png")
 
     with z.ZipFile(in_memory_file, "w") as z1:
         for fname in zips:
             with z.ZipFile(fname, "r") as zf:
                 for name in zf.namelist():
-                    if name not in z1.namelist() and name not in blacklisted:
+                    if name not in z1.namelist() and name not in blacklist:
                         z1.writestr(name, zf.open(name).read())
 
     return Response(
