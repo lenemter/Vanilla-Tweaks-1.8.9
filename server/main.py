@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, Response
 
 import zipfile as z
 from io import BytesIO
-import warnings
 
 
 app = Flask(__name__)
@@ -20,15 +19,21 @@ def download():
     in_memory_file = BytesIO()
     zips = [f"patches/{patch}.zip" for patch in args] + ["new_default_textures.zip"]
 
+    blacklisted = set()
+    if "vibrant_bed_icon" in args:
+        blacklisted.add("assets/minecraft/textures/blocks/bed_head.png")
+        blacklisted.add("assets/minecraft/textures/blocks/bed_feet.png")
+
     with z.ZipFile(in_memory_file, "w") as z1:
         for fname in zips:
             with z.ZipFile(fname, "r") as zf:
-                for name in zf.namelist():
+                namelist_set = set(zf.namelist())
+                for name in namelist_set or name in blacklisted:
                     if name not in z1.namelist():
                         z1.writestr(name, zf.open(name).read())
 
     return Response(
-        in_memory_file.getvalue(),
+        response=in_memory_file.getvalue(),
         mimetype="application/zip",
         headers={
             "Content-Disposition": "attachment;filename=Vanilla_Tweaks_for_1.8.9.zip"
