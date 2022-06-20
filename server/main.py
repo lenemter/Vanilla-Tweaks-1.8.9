@@ -21,13 +21,11 @@ def download():
     zips = [f"patches/{patch}.zip" for patch in args] + ["new_default_textures.zip"]
 
     with z.ZipFile(in_memory_file, "w") as z1:
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
-            for fname in zips:
-                with z.ZipFile(fname, "r") as zf:
-                    for name in zf.namelist():
-                        if name not in z1.namelist():
-                            z1.writestr(name, zf.open(name).read())
+        for fname in zips:
+            with z.ZipFile(fname, "r") as zf:
+                for name in zf.namelist():
+                    if name not in z1.namelist():
+                        z1.writestr(name, zf.open(name).read())
 
     return Response(
         in_memory_file.getvalue(),
