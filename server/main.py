@@ -1,18 +1,19 @@
 from flask import Flask, render_template, request, Response
 
-import zipfile as z
 from io import BytesIO
+from os import getenv
+import zipfile as z
 
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
 
-@app.route("/download")
+@app.route("/download", methods=["GET"])
 def download():
     args = list(request.args)[1:]
 
@@ -20,9 +21,6 @@ def download():
     zips = [f"patches/{patch}.zip" for patch in args] + ["new_default_textures.zip"]
 
     blacklist = set()
-    if "vibrant_bed_icon" in args:
-        blacklist.add("assets/minecraft/textures/blocks/bed_head.png")
-        blacklist.add("assets/minecraft/textures/blocks/bed_feet.png")
 
     with z.ZipFile(in_memory_file, "w") as z1:
         for fname in zips:
@@ -41,4 +39,5 @@ def download():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = getenv("PORT", default=5000)
+    app.run(port=port, debug=True)
