@@ -18,7 +18,7 @@ def download():
     args = list(request.args)
 
     in_memory_file = BytesIO()
-    zips = [f"patches/{patch}.zip" for patch in args] + ["new_default_textures.zip"]
+    zips = [f"tweaks/{tweak}.zip" for tweak in args] + ["new_default_textures.zip"]
 
     with ZipFile(in_memory_file, "w") as z1:
         for fname in zips:
