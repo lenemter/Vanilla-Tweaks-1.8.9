@@ -1,0 +1,31 @@
+:root {
+    --tweak-color: #333;
+    --tweak-text-color: #fff;
+    --tweak-selected-color: #eee;
+    --tweak-selected-text-color: #111;
+    --tweak-hover-color: #636363;
+    --tweak-selected-hover-color: hwb(0 95% 5%);
+}
+
+body {
+    padding-top: 36px;
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 24px;
+    }
+}
+
+.navbar > .container-fluid {
+    max-width: 96rem;
+}
+
+.tweak {
+    width: 274px; /* 256px (image size) + 16px (mx-2) + 2px (border) */
+}
+
+.tweak > img {
+    width: 256px;
+}
