@@ -20,4 +20,5 @@ body {
 
 .tweak > img {
     width: 256px;
+    object-fit: cover;
 }
