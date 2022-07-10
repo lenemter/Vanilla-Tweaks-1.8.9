@@ -26,7 +26,7 @@
         <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid mx-sm-5 mx-2">
                 <!-- Brand -->
-                <span class="navbar-brand"> Vanilla Tweaks for 1.8.9 </span>
+                <span class="navbar-brand">Vanilla Tweaks for 1.8.9</span>
 
                 <!-- Button -->
                 <button
@@ -79,8 +79,9 @@
             </div>
         </nav>
 
-        <div class="container mt-5">
-            <main>
+        <div class="mt-5">
+            <main class="container">
+                <!-- Alert -->
                 <div
                     class="alert alert-warning d-flex align-items-center"
                     role="alert"
@@ -88,12 +89,13 @@
                     <span>
                         <i
                             class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                            aria-label="Warning:"
                         ></i
-                        >These Packs <strong>always</strong> use the new
-                        Minecraft Default Textures
+                        >These Packs use the new Minecraft Default Textures
                     </span>
                 </div>
-
+                
+                <!-- Main -->
                 <div class="accordion" id="accordionCategories">
                     <div class="accordion-item">
                         <h2
@@ -116,18 +118,20 @@
                             class="arrordion-collapse collapse show"
                             aria-labelledby="categories-aesthetic-header"
                         >
-                            <div class="accordion-body">
+                            <div
+                                class="accordion-body d-flex justify-content-center flex-wrap gap-4"
+                            >
                                 {% for tweak in tweaks %}
                                 <div class="card tweak">
                                     <img
                                         src="./static/tweaks/{{ tweak['id'] }}/img.png"
-                                        class="card-img-top mx-2"
+                                        class="card-img-top"
                                         alt="{{ tweak['title'] }} Preview"
                                         draggable="false"
                                         width="256"
                                         height="128"
                                     />
-                                    <div class="card-body">
+                                    <div class="card-body d-flex flex-column">
                                         <h5 class="card-title text-center">
                                             {{ tweak['title'] }}
                                         </h5>
@@ -136,7 +140,7 @@
                                         </p>
                                         <button
                                             type="button"
-                                            class="btn btn-outline-danger"
+                                            class="btn btn-outline-danger mt-auto"
                                             tweak-name="{{ tweak['id'] }}"
                                         >
                                             <i

@@ -11,7 +11,7 @@ from zipfile import ZipFile
 app = Flask(__name__)
 
 
-@cache
+# @cache
 def index_template():
     TWEAKS_FOLDER = Path("./src/static/tweaks/")
     folders = [f for f in TWEAKS_FOLDER.glob("*") if f.is_dir()]
@@ -24,7 +24,7 @@ def index_template():
     return render_template("index.html", tweaks=tweaks)
 
 
-@cache
+# @cache
 def create_zip(args: list) -> bytes:
     in_memory_file = BytesIO()
     zips = [f"tweaks/{tweak}.zip" for tweak in args] + ["new_default_textures.zip"]

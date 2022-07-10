@@ -1,20 +1,11 @@
-:root {
-    --tweak-color: #333;
-    --tweak-text-color: #fff;
-    --tweak-selected-color: #eee;
-    --tweak-selected-text-color: #111;
-    --tweak-hover-color: #636363;
-    --tweak-selected-hover-color: hwb(0 95% 5%);
-}
-
 body {
-    padding-top: 36px;
-    padding-bottom: 40px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 24px;
+        padding-top: 1.5rem;
     }
 }
 
@@ -23,7 +14,8 @@ body {
 }
 
 .tweak {
-    width: 274px; /* 256px (image size) + 16px (mx-2) + 2px (border) */
+    width: 258px; /* 256px (image size) + 2px (border) */
+    min-width: 258px !important;
 }
 
 .tweak > img {
