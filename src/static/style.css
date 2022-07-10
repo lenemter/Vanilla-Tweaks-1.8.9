@@ -1,6 +1,8 @@
 body {
     padding-top: 2rem;
     padding-bottom: 3rem;
+
+    min-height: 101vh;  /* Always visible scroolbar*/
 }
 
 @media screen and (max-width: 768px) {

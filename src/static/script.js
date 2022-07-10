@@ -1,5 +1,6 @@
 "use strict";
 
+// Download
 const donwload_btn = document.querySelector(".btn-download");
 donwload_btn.onclick = () => {
     let params = [];
@@ -12,10 +13,7 @@ donwload_btn.onclick = () => {
     location.href = link;
 }
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-
+// Buttons
 const tweak_btns = document.querySelectorAll(".tweak .btn");
 for (const btn of tweak_btns) {
     btn.onclick = () => {
