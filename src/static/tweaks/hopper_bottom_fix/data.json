@@ -1,0 +1,6 @@
+{
+    "id": "hopper_bottom_fix",
+    "title": "Hopper Bottom Fix",
+    "description": "Applies hopper_inside.png to the bottom of Hoppers rather than hopper_side.png.",
+    "category": "Fixes"
+}

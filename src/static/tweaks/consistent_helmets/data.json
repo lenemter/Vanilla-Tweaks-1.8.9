@@ -1,0 +1,6 @@
+{
+    "id": "consistent_helmets",
+    "title": "Consistent Helmets",
+    "description": "Adds nose-pieces to the helmet items that are missing them (iron, gold & diamond).",
+    "category": "Fixes"
+}

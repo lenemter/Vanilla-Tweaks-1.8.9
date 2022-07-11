@@ -1,0 +1,6 @@
+{
+    "id": "no_vignette",
+    "title": "No Vignette",
+    "description": "Removes the darkened corners of the screen that occur in darker areas when graphics are set to 'fancy'.",
+    "category": "Unobtrusive"
+}

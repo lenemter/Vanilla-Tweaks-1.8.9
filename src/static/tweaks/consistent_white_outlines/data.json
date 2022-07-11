@@ -1,0 +1,6 @@
+{
+    "id": "consistent_white_outlines",
+    "title": "Consistent White Outlines",
+    "description": "Gives world and server selection buttons white outlines rather than blue, for consisteny with the rest of the widgets.",
+    "category": "Fixes"
+}

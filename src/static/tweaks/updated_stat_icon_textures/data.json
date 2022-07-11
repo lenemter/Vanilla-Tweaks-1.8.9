@@ -1,0 +1,6 @@
+{
+    "id": "updated_stat_icon_textures",
+    "title": "Updated Stat Icon Textures",
+    "description": "Retextures the statistics menu icons to fit in-line with the 1.14 default textures, as they were left out in that update.",
+    "category": "Fixes"
+}

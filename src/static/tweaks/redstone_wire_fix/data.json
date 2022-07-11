@@ -1,0 +1,6 @@
+{
+    "id": "redstone_wire_fix",
+    "title": "Redstone Wire Fix",
+    "description": "Adds some extra pixels to the Redstone Wire texture to make sure the whole line joins up.",
+    "category": "Fixes"
+}

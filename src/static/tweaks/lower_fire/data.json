@@ -1,0 +1,6 @@
+{
+    "id": "lower_fire",
+    "title": "Lower Fire",
+    "description": "Lowers the height of fire to be 1-block-tall.",
+    "category": "Unobtrusive"
+}

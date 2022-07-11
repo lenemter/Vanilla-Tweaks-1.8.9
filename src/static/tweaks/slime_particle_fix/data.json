@@ -1,0 +1,6 @@
+{
+    "id": "slime_particle_fix",
+    "title": "Slime Particle Fix",
+    "description": "Makes the Slime's jumping particles use the slime block texture, rather than the slime ball.",
+    "category": "Fixes"
+}

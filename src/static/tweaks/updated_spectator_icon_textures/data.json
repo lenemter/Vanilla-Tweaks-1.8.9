@@ -1,0 +1,6 @@
+{
+    "id": "updated_spectator_icon_textures",
+    "title": "Updated Spectator Icon Textures",
+    "description": "Retextures the Spectator Mode icons to fit in-line with the 1.14 default textures, as they were left out in that update.",
+    "category": "Fixes"
+}

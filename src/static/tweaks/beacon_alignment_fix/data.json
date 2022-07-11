@@ -1,0 +1,6 @@
+{
+    "id": "beacon_alignment_fix",
+    "title": "Beacon Alignment Fix",
+    "description": "Centers check in the beacon GUI.",
+    "category": "Fixes"
+}

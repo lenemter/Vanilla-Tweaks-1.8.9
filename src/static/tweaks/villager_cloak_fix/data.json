@@ -1,0 +1,6 @@
+{
+    "id": "villager_cloak_fix",
+    "title": "Villager Cloak Fix",
+    "description": "Slightly tweaks the texture of Villagers' cloaks to include the missing bottom pixels.",
+    "category": "Fixes"
+}

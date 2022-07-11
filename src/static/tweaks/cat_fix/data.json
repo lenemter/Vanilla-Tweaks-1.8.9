@@ -1,0 +1,6 @@
+{
+    "id": "cat_fix",
+    "title": "Cat fix",
+    "description": "Removes z-fighting under all Cats' chins and fixes miscoloured white pixels on the upper face of the Tuxedo Cat's legs.",
+    "category": "Fixes"
+}
