@@ -11,10 +11,6 @@ body {
     }
 }
 
-.navbar > .container-fluid {
-    max-width: 96rem;
-}
-
 .tweak {
     width: 258px; /* 256px (image size) + 2px (border) */
     min-width: 258px !important;
