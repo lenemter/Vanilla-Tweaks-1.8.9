@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, Response
 
-from functools import cache
 from io import BytesIO
 import json
 import logging
-from os import getenv
+import os
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -30,9 +29,8 @@ CATEGORIES = [
     "Hypixel",
 ]
 
-# @cache
 def index_template():
-    TWEAKS_FOLDER = Path("./src/static/tweaks/")
+    TWEAKS_FOLDER = Path("./static/tweaks/")
     folders = [f for f in TWEAKS_FOLDER.glob("*") if f.is_dir()]
     tweaks = []
     for folder in folders:
@@ -47,11 +45,10 @@ def index_template():
     return render_template("index.html", tweaks=tweaks, categories=CATEGORIES)
 
 
-# @cache
 def create_zip(args: list) -> bytes:
     in_memory_file = BytesIO()
-    zips = [f"src/static/tweaks/{tweak}/tweak.zip" for tweak in args] + [
-        "new_default_textures.zip"
+    zips = [f"./static/tweaks/{tweak}/tweak.zip" for tweak in args] + [
+        "./static/new_default_textures.zip"
     ]
 
     with ZipFile(in_memory_file, "w") as z1:
@@ -83,5 +80,12 @@ def download():
 
 
 if __name__ == "__main__":
-    port = getenv("PORT", default=5000)
+    # Change working directory to scripts direcotory
+    abspath = os.path.abspath(__file__)
+    dname = os.path.dirname(abspath)
+    os.chdir(dname)
+
+    logging.basicConfig(level=logging.INFO)
+
+    port = os.getenv("PORT", default=5000)
     app.run(port=port, debug=True)
